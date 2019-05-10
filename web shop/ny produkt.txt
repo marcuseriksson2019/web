@@ -1,9 +1,0 @@
-    id: 13,
-            articleNr: 126824,
-            name: 'Sunglasses',
-            brand: 'Nike',
-            imageUrl: 'assets/images/products/sungl.jpg',
-            imageUrl2: 'assets/images/products/sungl2.jpg',
-            descr: 'Stylish, reflecting sunglasses designed to protect your eyes at the roughest UV conditions.',
-            department: ['Women', 'Accessories', 'Sunglasses'],
-            price: 62
