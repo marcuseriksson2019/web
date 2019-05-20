@@ -1,0 +1,73 @@
+﻿<div id="main">
+        <logo></logo>
+        <h3 class="bg-primary p-a-1"></h3>
+            <cartPreview></cartPreview>
+            <search></search>
+            <navigationBar></navigationBar>
+        <div id="wrapper">
+            
+                <div id="carddiv" *ngFor="let product of getProducts(selectedgender, selecteddept); let i = index" (click)="detailedInfo(product)"> 
+                    <div align ="center" id = "imagediv">
+                        <img class="product-image" [src]="product.imageUrl">
+                    </div>
+                    <div id="textdiv">
+                        {{product.article}}
+                            <div id="brand">{{product.brand}}</div>
+                            <div id="description">{{product.descr}}</div>
+                            <div id="department">
+                                <span id="division">
+                                    <a href="#">{{ division }}</a>
+                                    <span>{{product.gender + ' < ' +  product.department + ' < ' +  product.subdepartment}}</span>
+                                </span>
+                            </div>
+                        
+                    </div>
+                    <div id="pricediv">
+                        {{product.price + '£'}}
+                    </div>
+        
+                </div>
+    
+                <div id="departmentsdiv">
+                        <button id="allDepartments" (click)="allDepartments()">All departments</button>
+                        <div id="optionMenu3">
+                            <span id="genderTitle">Gender: </span>
+                            <select id="options3" class="form-control" [value]="gender" (change)="selectedGender($event.target.value)">
+                            <option class="spantext" *ngFor="let gender of getGender(); let i = index">{{gender}}</option>
+                            </select>
+                        </div>
+                        <div id="optionMenu">
+                            <span id="departmentTitle">Department: </span>
+                            <select id="options" class="form-control" [value]="department" (change)="selectedDepartment($event.target.value)">
+                            <option class="spantext" *ngFor="let department of getDepartments(); let i = index">{{department}}</option>
+                            </select>
+                        </div>
+                </div>
+    
+        </div>
+    
+        <div id="bottom">
+                    
+            <div id="optionMenu">
+                <span id="optionTitle">Products per page: </span>
+                <select id="options" class="form-control" [value]="p" (change)="onSelect($event.target.value)">
+                <option class="spantext" *ngFor="let p of pages; let i = index">{{p}}</option>
+                </select>
+            </div>
+    
+            <button id="admin" routerLink="/login" routerLinkActive="active">Administration</button>
+        
+            <div id="pagesdiv">
+                <button id="pages" *ngFor="let page of buttons" (click)="showPage(page)" [class.active]="pageNumber==page">{{ page }}</button>
+            </div>
+    
+        </div>
+    
+        <div id="footer">
+        </div>
+    </div>    
+    
+    
+           
+        
+        

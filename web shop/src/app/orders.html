@@ -1,0 +1,92 @@
+<div id="main">
+    <div id="heading" align ="center">Health shop</div>
+        <h3>ADMINISTRATION</h3>
+        <table align="center">
+            <tr id="tableHeader">
+            <td id="id">Order number</td>
+            <td id="a1">Order date</td>
+            <td id="a2">First name</td>
+            <td id="d1">Last name</td>
+            <td id="ar">Articles</td>
+            <td id="v">VAT</td>
+            <td id="t">Total</td>
+            <td id="pr">Shipped</td>
+            <td id="pr">Action</td>
+            </tr>
+            <tr *ngFor="let order of getOrders(); let i = index">
+                <td>{{ order.ordernumber }}</td>
+                <td>{{ order.date }}</td>
+                <td>{{ order.firstname }}</td>
+                <td>{{ order.lastname }}</td>
+                <td>
+                    <tr *ngFor="let a of order.articles; let i = index">{{ a.article + ", " + a.size + ", " + a.color  + ", " + a.quantity}}</tr>
+                </td>
+                <td>{{ order.VAT + "  £"}}</td>
+                <td>{{ order.total + "  £"}}</td>
+                <td>{{ order.shipped }}</td>
+                <td id="edit"><button (click)="editOrder(i)" id="editButton">Edit</button>
+                <button (click)="deleteOrder(i)" id="deleteButton">Delete</button></td>
+            </tr>
+        </table>
+
+    <button id="backToShop" routerLink="/admin">Products</button>
+    <h4>Edit Order</h4>
+    
+    <form novalidate #form="ngForm" (ngSubmit)="update(form.value)">
+        <div class="form-group">
+            <label>Order number</label><br/>
+            <input placeholder="Enter article number" name="articleNr" class="form-control" id="articleNrInput" type="text" [(ngModel)]="order.ordernumber" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Order date</label><br/>
+            <input placeholder="Enter article name" name="article" class="form-control" id="articleInput" type="text" [(ngModel)]="order.date" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>First name</label><br/>
+            <input placeholder="Enter brand" name="brand" class="form-control" id="brandInput" type="text" [(ngModel)]="order.firstname" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Last name</label><br/>
+            <input placeholder="Enter description" name="descr" class="form-control" id="descriptionInput" type="text" [(ngModel)]="order.lastname" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Street</label><br/>
+            <input placeholder="Enter gender" name="gender" class="form-control" id="genderInput" type="text" [(ngModel)]="order.street" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>City</label><br/>
+            <input placeholder="Enter department" name="department" class="form-control" id="departmentInput" type="text" [(ngModel)]="order.city" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Zip code</label><br/>
+            <input placeholder="Enter subdepartment" name="subdepartment" class="form-control" id="subdepartmentInput" type="text" [(ngModel)]="order.zipcode" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Articles</label><br/>
+            <div *ngFor="let a of order.articles; let i = index">
+                <input placeholder="Enter article" name="article(i)" class="form-control" id="articleInput" type="text" [(ngModel)]="a.article" required/>
+                <input placeholder="Enter size" name="size(i)" class="form-control" id="articleInput" type="text" [(ngModel)]="a.size" required/>
+                <input placeholder="Enter color" name="color(i)" class="form-control" id="articleInput" type="text" [(ngModel)]="a.color" required/>
+                <input placeholder="Enter quantity" name="quantity(i)" class="form-control" id="articleInput" type="text" [(ngModel)]="a.quantity" required/><br/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>VAT</label><br/>
+            <input placeholder="Enter VAT" name="VAT" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="order.VAT" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Total</label><br/>
+            <input placeholder="Enter total sum" name="total" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="order.total" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Shipped</label><br/>
+            <input placeholder="Enter image URL 2" name="shipped" class="form-control" id="imageUrl2Input" type="checkbox" [(ngModel)]="order.shipped" required/><br/>
+        </div>
+    </form>
+    
+    <button type="submit" id="updateButton" routerLink="/admin" (click)="updateOrder(form)">Update</button>
+
+    <div id="bottom">
+    </div>
+
+</div>

@@ -1,0 +1,27 @@
+<div id="main">
+<logo></logo>
+<div align="center">
+<h3>LOGIN</h3>
+</div>
+
+<div id="wrapper">
+        <h4>Authentication required:</h4>
+
+        <form  #form="ngForm" novalidate (ngSubmit)="login(form)">
+                <div class="form-group">
+                <label>Username</label><br/>
+                <input placeholder="Enter username" name="username" #firstName="ngModel" class="form-control" id="usernameInput" [(ngModel)]="username" required/><br/>
+                </div>
+                <div class="form-group">
+                <label>Password</label><br/>
+                <input placeholder="Enter password" name="password" #lastName="ngModel" class="form-control" id="passwordInput" type="password" [(ngModel)]="password" required/><br/>
+                </div>
+                <span id="error">{{error}}</span>
+        </form>
+	<button id="backToShop" routerLink="/shop" (click)="returnToShop()">Return to shop</button>
+        <button id="login" (click)="login(form)" type="submit">Log in</button>
+</div>
+<div id="footer">
+</div>
+
+</div>
