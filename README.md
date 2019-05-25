@@ -1,9 +1,3 @@
-Web shop
---------
-Web shop är en webbsida där man kan handla och beställa varor via en order.
-Gjord i AngularJS.
-
-
 Mobilanpassning
 ---------------
 Mobilanpassning av hemsida, anpassad efter mobiler och ner till iPhone smartphones 320px.
