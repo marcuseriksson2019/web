@@ -1,3 +1,10 @@
+Web shop
+--------
+
+Web shop är en klädshop gjord i AngularJS inkl CSS.
+Ska även innehålla responsiv design.
+
+
 Mobilanpassning
 ---------------
 Mobilanpassning av hemsida, anpassad efter mobiler och ner till iPhone smartphones 320px.
