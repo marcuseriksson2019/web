@@ -1,7 +1,0 @@
-    <form novalidate #form="ngForm" (ngSubmit)="searchmodel.retrieveValue(form.value)">
-        <div class="form-group">
-            <label>Search</label><br/>
-            <input placeholder="Enter search text" name="search" class="form-control" id="searchInput" type="text" [ngModel]="searchmodel.searchword">
-        </div>
-    </form>
-    <button type="submit" id="searchButton" (click)="searchmodel.retrieveValue(form.value)">Search</button>
