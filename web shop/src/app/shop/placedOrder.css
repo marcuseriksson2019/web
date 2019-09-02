@@ -1,0 +1,370 @@
+@font-face {
+	font-family: OpenSans;
+	src: url(../OpenSans-Regular.ttf);
+}
+
+@media only screen and (max-width: 1380px) {
+
+    #main {
+        background-color: #444;
+		height: 100%;
+        min-height: 660px;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: plain;
+		color: #fff;
+    }
+
+    #wrapper {
+        background-color: #444;
+        height: 490px;
+    }
+
+    #heading {
+        font-family: OpenSans; /*Segoe Print*/
+        font-weight: bold;
+        font-size: 36px;
+        background-color: #444;
+        color: #fff;
+        height: 61px;
+    }
+
+    .input {
+        width: 100px;
+    }
+
+    h2 {
+        margin-left: 0%;
+        font-family: OpenSans;
+        font-weight: bold;
+    }
+
+    h3 {
+        position: absolute;
+        top: 58px;
+        left: 37%;
+        width: 340px;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #fff;
+        text-align: center;
+    }
+
+    #text {
+        position: absolute;
+        top: 120px;
+        width: 40%;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #ccc;
+        text-align: left;
+        margin-left: 36%;
+    }
+
+    #orderText {
+        position: absolute;
+        top: 160px;
+        width: 40%;
+        font-family: OpenSans;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: transparent;
+        color: #fff;
+        text-align: left;
+        margin-left: 46%;
+    }
+
+    #wrapper #backToShop {
+        position: absolute;
+        top: 2%;
+        right: 1%;
+        height: 20px;
+        width: 120px;
+        background-color:#444;
+        color: #fff;
+        border: none;
+        font-family: OpenSans;
+    }
+
+    #perspective {
+        perspective: 1600px;
+    }
+    
+    .box-inner {
+        position: absolute;
+        left: 2%;
+        animation-name: roll;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        transform-origin: center;
+    }
+    
+    @keyframes roll {
+        from {
+            transform: translateX(0%) rotateY(90deg);
+            animation-timing-function: ease-in-out;
+        }
+        to {
+            transform: translateX(0%) rotateY(0deg);
+            animation-timing-function: ease-in-out;
+        }
+    }
+    
+    .box-inner {
+        position: absolute;
+        margin: auto;
+        width: 94%;
+        height: 300px;
+        float: left;
+    }
+
+    #productTable {
+        position: absolute;
+        top: 290px;
+        font-family: OpenSans;
+        font-size: 14px;
+        margin-left: 13%;
+        padding-left: 12%;
+        padding-right: 12%;
+        width: 76%;
+        background-color: transparent;
+        color:#fff;
+        z-index: 3;
+    }
+
+    td {
+        text-indent: 4px;
+        border: none;
+    }
+
+    td #a1 {
+        width:12%;
+        color: #bbb;
+    }
+
+    td #a2 {
+        width:48%;
+        color:#bbb;
+    }
+
+    td #s {
+        width:4%;
+        color:#bbb;
+    }
+
+    td #q {
+        width:4%;
+        color: #bbb;
+    }
+
+    td #pr {
+        width:32%;
+        color: #bbb;
+    }
+
+    tr #row {
+        background-color: #777; /*rgb(168, 103, 243); rgb(101, 91, 238);*/
+        color:#fff;
+        width:100%;
+    }
+
+    #tableHeader {
+        background-color: #444;
+        color:#ccc;
+    }
+
+    td #order {
+        width:20%;
+        color: #777;
+        background-color: #444;
+    }
+
+    td #order2 {
+        width:80%;
+        color: #777;
+        background-color: #444;
+    }
+
+    td #order3 {
+        width:20%;
+        color: #777;
+        background-color: #444;
+    }
+
+    td #order4 {
+        width:80%;
+        color: #777;
+        background-color: #444;
+    }
+
+    #tableFooter {
+        background-color: #444;
+        color:#ccc;
+    }
+
+    #tableFooter #t {
+        width:20%;
+        color:#bbb;
+    }
+
+    #tableFooter #t2 {
+        width:40%;
+        color:#fff;
+    }
+
+    #tableFooter #t3 {
+        width:20%;
+        color:#fff;
+    }
+
+    #tableFooter #t4 {
+        width:8%;
+        color:#fff;
+    }
+
+    #tableFooter #total {
+        width:12%;
+        color: #bbb;
+    }
+
+    #addressTable {
+        position: absolute;
+        top: 140px;
+        width: 76%;
+        padding-left: 12%;
+        padding-right: 12%;
+        margin-left: 13%;
+        font-family: OpenSans;
+        font-size: 13px;
+        text-indent: 4px;
+        border-top: 1px solid #fff;
+    }
+
+    #addressTable #headers {
+        height: 20px;
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 13px;
+        border: none;
+        color: #ccc;
+    }
+
+    #addressTable #addresses {
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 13px;
+        color: #fff;
+    }
+
+    #addressTable #rows {
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 13px;
+        color: #fff;
+    }
+
+}
+
+@media (min-width: 480px) and (max-width: 880px) and (-webkit-min-device-pixel-ratio: 0) {
+
+    h3 {
+        position: absolute;
+        top: 58px;
+        left: 12%;
+        width: 340px;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #fff;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 0) {
+
+    h3 {
+        position: absolute;
+        top: 58px;
+        left: 33px;
+        width: 300px;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #fff;
+        text-align: center;
+    }
+
+    h4 {
+        position: absolute;
+        top: 190px;
+        width: 40%;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #fff;
+        text-align: left;
+        margin-left: 36%;
+    }
+
+    #text {
+        position: absolute;
+        top: 120px;
+        width: 76%;
+        font-family: OpenSans;
+        background-color: #444;
+        color: #ccc;
+        text-align: left;
+        margin-left: 15%;
+    }
+
+    #productTable {
+        position: relative;
+        top: 210px;
+        font-family: OpenSans;
+        font-size: 11px;
+        padding-left: 0%;
+        padding-right: 0%;
+        background-color:#444;
+        color:#fff;
+        z-index: 3;
+    }
+
+    #addressTable {
+        position: relative;
+        top: 190px;
+        width: 320px;
+        font-family: OpenSans;
+        font-size: 9px;
+        text-indent: 4px;
+    }
+
+    #addressTable #headers {
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 11px;
+        border: none;
+        color: #ccc;
+    }
+
+    #addressTable #addresses {
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 11px;
+        color: #fff;
+    }
+
+    #addressTable #rows {
+        text-indent: 4px;
+        font-family: OpenSans;
+        font-size: 11px;
+        color: #fff;
+    }
+
+}
+
+
+
+    
+
+
+

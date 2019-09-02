@@ -1,0 +1,146 @@
+﻿<div id="main">
+    <logo></logo>
+    <h3 class="bg-primary p-a-1"></h3>
+        <cartPreview></cartPreview>
+        <search></search>
+        <navigationBar></navigationBar>
+    <div id="wrapper">
+        
+        <div id="first" [ngStyle]="{ height: height }">
+            <div id="fullrow" *ngFor="let product of getProducts(selectedgender, selecteddept, selectedsort); let i = index; trackBy:getKey" [routerLink]="['/shop/products/', product.id]">
+                    <div id="squares"> 
+                        <div align ="center" id="image2">
+                            <img class="product-image" [src]="product.imageUrl2" width="60%" height="60%">
+                        </div>
+                        <div id="textdiv2">
+                            <div id="title2" align ="center">{{product.article}}</div>
+                                <div align ="center" id="brand2">{{product.brand}}</div>
+                                <div id="description2">{{product.descr}}</div>
+                                <div align ="center" id="department2">
+                                    <span id="division2">
+                                        <a href="#">{{ division }}</a>
+                                        <span>{{product.gender + ' < ' +  product.department + ' < ' +  product.subdepartment}}</span>
+                                    </span>
+                                </div>
+                        </div>
+                        <div align ="center" id="pricediv2">
+                            {{product.price + '£'}}
+                        </div>
+                    </div>
+             </div>
+         </div>
+
+            <div id="departmentsdiv">
+                    <button id="allDepartments" (click)="allDepartments()">All departments</button>
+                    <div id="optionMenu3">
+                        <span id="genderTitle">Gender: </span>
+                        <select id="options3" class="form-control" [value]="gender" (change)="selectedGender($event.target.value)">
+                        <option class="spantext" *ngFor="let gender of getGender(); let i = index">{{gender}}</option>
+                        </select>
+                    </div>
+                    <div id="optionMenu">
+                        <span id="departmentTitle">Department: </span>
+                        <select id="options" class="form-control" [value]="department" (change)="selectedDepartment($event.target.value)">
+                        <option class="spantext" *ngFor="let department of getDepartments(); let i = index">{{department}}</option>
+                        </select>
+                    </div>
+                    <div id="optionMenu4">
+                        <span id="sortTitle">Sort by: </span>
+                        <select id="options4" class="form-control" [value]="sortmode" (change)="selectedSortMode($event.target.value)">
+                        <option class="spantext" *ngFor="let sortmode of getSortModes(); let i = index">{{sortmode}}</option>
+                        </select>
+                    </div>
+            </div>
+
+    </div>
+
+    <div id="bottom">
+                
+        <div id="optionMenu">
+            <span id="optionTitle">Products per page: </span>
+            <select id="options" class="form-control" [value]="p" (change)="onSelect($event.target.value)" >
+            <option class="spantext" *ngFor="let p of pages; let i = index">{{p}}</option>
+            </select>
+        </div>
+
+        <button id="admin" routerLink="/login" routerLinkActive="active">Administration</button>
+    
+        <div id="pagesdiv">
+            <button id="pages" *ngFor="let page of buttons" (click)="showPage(page)" [class.active]="pageNumber==page">{{ page }}</button>
+        </div>
+        
+    </div>
+
+   <!--<slideshow></slideshow>-->
+   <div id="second" >
+       <div *ngFor="let image of getSquares(); let i = index">
+            <div id="squaresL"> 
+                <div align ="center" id="imagediv2">
+                    <img class="product-image" [src]="image" height="100%" width="100%">
+                </div>
+                <div align ="center" class="textad">
+                    {{ texts[i] }}
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+    <div id="fourth" >
+            
+        <div id="maintext">
+            These products are designed to be endurable, comfortable and stylish to ensure that you get the most out of your everyday life
+            or work life. Materials are carefully selected for each product optimizing its performance and lifetime.
+            Whether you are going to use them for work, at home, outdoors or for formal occassions there are products that suits everyone. This guarantees that you will apprecciate 
+            your product for a long time and enjoy them each time you use them.
+        </div>
+        <img src="assets/images/products/skirt2.jpg">
+    </div>
+
+    <div id="footer">
+        <div id="firstcol" align="center">
+            <ul>
+                <li>Info</li>
+                <li>Images</li>
+                <li>About the company</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div id="secondcol" align="center">
+            <ul>
+                <li>Clothes</li>
+                <li>Articles</li>
+                <li>Underwear</li>
+                <li>Shoes</li>
+            </ul>
+        </div>
+        <div id="thirdcol" align="center">
+            <ul>
+                <li>Cookies</li>
+                <li routerLink="/searchResults">Search</li>
+                <li>Shipping</li>
+                <li>Availability</li>
+            </ul>
+        </div>
+        <div id="fourthcol" align="center">
+            <ul>
+                <li>User reviews</li>
+                <li>Taxes</li>
+                <li>Cut-offs</li>
+                <li>Campaigns</li>
+            </ul>
+        </div>
+        <div id="bottomrow" align="center">
+            <div id="firstrow">ALL RIGHTS RESERVED.</div>
+            <div class="secondrow">The Web shop trademark, logo and subtrademarks are all part of the Web shop corporation.</div>
+            <div class="secondrow">www.webshop.com</div>
+        </div>
+    </div>
+
+</div> 
+   
+
+
+       
+    
+    

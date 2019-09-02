@@ -1,0 +1,68 @@
+﻿<div id="main">
+<logo></logo>
+<navigationBar></navigationBar>
+<div id="wrapper">
+<h3>Thanks for your order!</h3>
+<span id="text">Your products will be shipped as soon as possible.</span>
+
+    <div id="orderText" align="center" >Your order</div>
+    <div id="perspective">
+    <div class="box-inner">
+    <table align="center" id="addressTable">
+        <tr id="headers">
+        </tr>
+        <tr id="headers">
+            <td id="order">Order no: {{ cart.order.ordernumber }}</td>
+            <td id="order2">Order date: {{ cart.order.date }}</td>
+        </tr>
+        <tr id="addresses">
+            <td id="order3">{{cart.order.firstname}} {{cart.order.lastname}}</td>
+            <td id="order4">Phone: +046 {{cart.order.phone}}</td>
+        </tr>
+        <tr id="rows">{{cart.order.street}}</tr>
+        <tr id="rows">{{cart.order.zipcode}} {{cart.order.city}}</tr>
+        <tr id="rows">{{cart.order.country}}
+        </tr>
+    </table>
+
+           <table align="center" id="productTable">
+            <tr id="tableHeader">
+            <td id="a1">Article no.</td>
+            <td id="a2">Article</td>
+            <td id="s">Size</td>
+            <td id="q">Quantity</td>
+            <td id="pr">Price</td>
+            </tr>
+            <tr id="row" *ngFor="let product of getCart(); let i = index">
+                <td>{{ product.articleNr }}</td>
+                <td>{{ product.article }}</td>
+                <td>{{ product.size }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.price*product.quantity + "£"}}</td>
+            
+            </tr>
+            <tr id="tableFooter">
+                    <td id="t">VAT</td>
+                    <td id="t2"></td>
+                    <td id="t3"></td>
+                    <td id="t4"></td>
+                    <td id="total">{{VAT + " £"}}</td>
+            </tr>
+            <tr>
+                <td id="t">Total</td>
+                <td id="t2"></td>
+                <td id="t3"></td>
+                <td id="t4"></td>
+                <td id="total">{{totalSum + " £"}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+    
+</div>
+
+<div id="footer">
+</div>
+
+</div>
