@@ -1,0 +1,40 @@
+@media only screen and (max-width: 1380px) {
+
+#menu {
+	position: absolute;
+	top: 30px;
+	right: 20px; /*calc(max-width - 20px)*/
+	display: flex;
+	flex-direction: row;
+	background-color: #444;
+}
+
+li {
+	display: block;
+	font-family: OpenSans;
+	font-size: 14px;
+	text-align: center;
+	background-color: #444;
+	color: #fff;
+	border: 1px solid #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+/*
+li:hover {
+	background-color: #ddd;
+	color: #000;
+}
+*/
+.active {
+    background-color: #ddd;
+	color: #000;
+}
+
+}
+
+@media (min-width: 320px) and (max-width: 1180px) and (-webkit-min-device-pixel-ratio: 0) {
+	#menu {
+		display: none;
+	}
+}
