@@ -1,0 +1,23 @@
+<div id="main">
+<img class="backgrImage" src="assets/images/background.jpg" width="1324" height="904">
+<logo></logo>
+<div align="center">
+<h3>LOGIN</h3>
+</div>
+
+<div id="wrapper">
+        <h4>Authentication required:</h4>
+        <form  #form="ngForm" novalidate (ngSubmit)="login(form)">
+                <div class="form-group">
+                        <input placeholder="Enter username" name="username" #firstName="ngModel" class="form-control" id="usernameInput" [(ngModel)]="username" required/><br/>
+                </div>
+                <div class="form-group">
+                        <input placeholder="Enter password" name="password" #lastName="ngModel" class="form-control" id="passwordInput" type="password" [(ngModel)]="password" required/><br/>
+                </div>
+                <span id="error">{{error}}</span>
+        </form>
+	<button id="backToShop" routerLink="/shop" (click)="returnToShop()">Return to shop</button>
+        <button id="login" (click)="login(form)" type="submit">Log in</button>
+</div>
+
+</div>
