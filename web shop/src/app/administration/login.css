@@ -1,0 +1,126 @@
+h3 {
+    font-family: OpenSans;
+    font-weight: bold;
+    position: absolute;
+    top: 70px;
+    margin-left: 47%; 
+    color: #bbb;
+}
+
+h4 {
+    font-family: OpenSans;
+    font-weight: bold;
+    margin-left: 43%; 
+    position: absolute;
+    top: 114px;
+    color: #bbb;
+}
+
+#main {
+    background-color: #000;
+    height: 100%;
+    min-height: 660px;
+    font-family: OpenSans;
+    font-size: 14px;
+    font-weight: plain;
+    color: #fff;
+}
+
+img {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    opacity: 0.4;
+    height: 660px;
+}
+
+#wrapper {
+    background-color: #222;
+    height: 490px;
+}
+
+#heading {
+	margin-bottom: 12px;
+	font-family: OpenSans; /*Segoe Print*/
+	font-weight: bold;
+	font-size: 36px;
+	background-color: #222;
+	color: #fff;
+	text-decoration: none;
+}
+
+form {
+    display: block;
+    float: bottom;
+    font-family: OpenSans;
+    position: absolute;
+    top: 200px;
+    width: 20%;
+    margin-left: 43%;
+}
+
+input {
+    color: #fff;
+    font-family: OpenSans;
+    font-weight: plain;
+    font-size: 14px;
+    margin-left: 4px;
+    margin-top: 16px;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+label {
+    color: #fff;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+#backToShop {
+    position: absolute;
+    top: 600px;
+    margin-left: 44%;
+    height: 30px;
+    width: 120px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #fff;
+    font-family: OpenSans;
+    z-index: 3;
+}
+
+#login {
+    position: absolute;
+    top: 54%;
+    margin-left: 44.7%;
+    height: 30px;
+    width: 120px;
+    background-color:transparent;
+    color: #fff;
+    border: 1px solid #ccc;
+    font-family: OpenSans;	
+}
+
+#error {
+    position: absolute;
+    top: 100px;
+    width: 200px;
+    font-size: 12px;
+    font-weight: plain;
+    color: #fff;
+}
+
+#footer {
+    position: relative;
+    background-color: #444;
+    height: 92px;
+}
