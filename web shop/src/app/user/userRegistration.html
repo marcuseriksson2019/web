@@ -1,0 +1,22 @@
+<div id="main">
+    <div id="msg" align="center">Register new user</div>
+    <div id="txt">Enter your details, select username and password</div>
+    <br/> 
+    <form novalidate #form="ngForm" (ngSubmit)="submit(form.value)" name="myForm">
+        <input type="text" [ngModel]="user.firstname" id="ufname" name="firstname" placeholder="Firstname" /><br/>  
+        <input type="text" [ngModel]="user.lastname" id="ulname" name="lastname" placeholder="Lastname" /><br/>
+        <input type="text" [ngModel]="user.street" id="street" name="street" placeholder="Street and street number" /><br/>
+        <input type="text" [ngModel]="user.zipcode" id="zipcode" name="zipcode" placeholder="Zip" /><br/>
+        <input type="text" [ngModel]="user.city" id="city" name="city" placeholder="City" /><br/>
+        <input type="text" [ngModel]="user.country" id="country" name="country" placeholder="Country" /><br/>
+        <input type="text" [ngModel]="user.phone" id="phone" name="phone" placeholder="Phone number" /><br/>
+        <input type="email" [ngModel]="user.email" id="email" name="email" placeholder="email" /><br/>
+        <input type="text" [ngModel]="user.username" id="username" name="username" placeholder="Username" /><br/>   
+        <input type="password" [ngModel]="user.password" id="password" name="password" placeholder="Password" /><br/>
+        <div>
+            <input id="register" type="submit" value="Register User">
+            <button id="backToShop" type="button" routerLink="/shop">Return to shop</button>
+        </div> 
+    </form>
+    <div *ngIf="error" id="error">{{errorMessage}}</div>
+</div>

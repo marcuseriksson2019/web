@@ -1,0 +1,405 @@
+@font-face {
+	font-family: OpenSans;
+	src: url(../OpenSans-Regular.ttf);
+}
+
+@media only screen and (max-width: 1380px) {
+
+    #main {
+        background-color: #000;
+        height: 100%;
+        min-height: 660px;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: plain;
+        color: #fff;
+    }
+
+    #backgrImage {
+		position: fixed;
+        top: 0px;
+        left: 8px;
+		opacity: 0.4;
+		height: 660px;
+	}
+
+    #msg {
+        position: absolute;
+        top: 24px;
+        margin-left: 43%;
+        font-family: OpenSans;
+        font-size: 24px;
+        font-weight: plain;
+    }
+
+    #heading {
+        margin-bottom: 12px;
+        font-family: OpenSans; /*Segoe Print*/
+        font-weight: bold;
+        font-size: 36px;
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+    }
+
+    h3 {
+        position: absolute;
+        top: 60px;
+        margin-left: 12%;
+        width: 86%;
+        font-family: OpenSans;
+        background-color: dimgray;
+        color: #fff;
+        text-indent: 4px;
+        text-align: left;
+    }
+
+    h4 {
+        position: absolute;
+        top: 62px;
+        width: 160px;
+        font-family: OpenSans;
+        background-color: #fff;
+        color: #444;
+        text-indent: 4px;
+        text-align: left;
+    }
+
+    span {
+        //color: rgb(111, 129, 231);
+        text-align: left;
+        position: relative;
+        left: 8px;
+    }
+
+    table {
+        position: relative;
+        top: 40px;
+        width: 60%;
+        margin-left: 39%;
+        font-family: OpenSans;
+        font-size: 14px;
+        border: 1px solid #000;
+        z-index: 2;
+    }
+
+    td {
+        padding-left: 4px;
+        border: none;
+    }
+
+    #orderdiv {
+        position: relative;
+        top: 70px;
+        left: 34%;
+        margin-bottom: 20px;
+        border: solid 1px #000;
+        width: 400px;
+        background-color: #ccc;
+    }
+
+    #orderdiv #square {
+        background-color: #ccc;
+        height: 105px;
+    }
+
+    #orderdiv #ordnr {
+        font-family: OpenSans;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(111, 129, 231);
+    }
+
+    #orderdiv #ordinfo {
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    #orderdiv #properties {
+        padding-left: 8px;
+        font-size: 13px;
+    }
+
+    #orderdiv #costs {
+        font-family: OpenSans;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    td #id {
+        font-family: OpenSans;
+        font-size: 16px;
+        font-weight: bold;
+        width:2%;
+        color: #fff;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #a1 {
+        width:100%;
+        color: #fff;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #a2 {
+        width:12%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #d1 {
+        width:10%;
+        color: #fff;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #t {
+        width:20%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #ar {
+        width:10%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #v {
+        width:20%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #z {
+        width:10%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #s {
+        width:10%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #ct {
+        width:10%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #c {
+        width:10%;
+        color:#000;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #pr {
+        width:2%;
+        color: #777;
+        background-color: rgb(73, 184, 88);
+    }
+
+    td #delete {
+        width:6%;
+        color: #777;
+        background-color: #fff;
+    }
+
+    #cancelButton {
+        background-color: rgb(255, 153, 0);
+        color: #fff;
+        border: 1px solid #fff;
+        width: 100px;
+        height: 30px;
+        position: absolute;
+        left: 292px;
+        top: 246px;
+    }
+
+    tr {
+        background-color: #ccc;
+        color: #000;
+        border: 1px solid #000;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: bold;
+        text-indent: 8px;
+    }
+
+    #tableHeader {
+        background-color: dimgrey;
+        color: #fff;
+        font-family: OpenSans;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #backToShop {
+        position: relative;
+        bottom: -65px;
+        left: 45%;
+        border: none;
+        border-radius: 4px;
+        width: 120px;
+        height: 30px;
+        background-color:rgb(41, 21, 214);
+        color: #fff;
+        border: none;
+        font-family: OpenSans;
+    }
+
+    form {
+        display: block;
+        float: bottom;
+        font-family: OpenSans;
+        position: absolute;
+        top: 116px;
+    }
+
+    input {
+        color: #222;
+        font-family: OpenSans;
+        font-weight: bold;
+        margin-left: 4px;
+        background-color: #ccc;
+    }
+
+    label {
+        color: #000;
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: plain;
+        margin-left: 4px;
+    }
+
+    #updateButton {
+        position: absolute;
+        top: 620px;
+        left: 110px;
+        background-color: rgb(255, 153, 0);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        width: 60px;
+        height: 30px;
+    }
+
+    #newButton {
+        position: absolute;
+        top: 600px;
+        left: 80px;
+        background-color: rgb(0, 255, 0);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        width: 60px;
+        height: 30px;
+    }
+
+    #bottom {
+        position: relative;
+        height: 40%;
+        background-color: #777;
+        margin-bottom: 16%;
+    }
+
+    #reviews {
+        position: absolute;
+        top: 80px;
+        left: 1000px;
+        width: 212px;
+        height: 360px;
+        background-color: transparent;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: plain;
+        color: #fff;
+    }
+
+    #reviews #submit {
+        margin-top: 30px;
+        background-color: #444;
+        color: #fff;
+        border: 1px solid #fff;
+        width: 120px;
+        height: 30px;
+        font-family: OpenSans;
+        font-size: 12px;
+        font-weight: plain;
+    }
+
+    #reviews form {
+        margin-top: -60px;
+    }
+
+    #reviews textarea {
+        color: #fff;
+        font-family: OpenSans;
+        font-weight: bold;
+        background-color: transparent;
+        margin-left: 4px;
+        width: 198px;
+        border: 1px solid #fff;
+    }
+
+    #reviews label {
+        color:#fff;
+        background-color: transparent;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: plain;
+        width: 200px;
+    }
+
+    #reviews input {
+        color:#fff;
+        font-family: OpenSans;
+        font-size: 14px;
+        font-weight: plain;
+        background-color: transparent;
+        width: 200px;
+        border: 1px solid #fff;
+    }
+
+    #reviews #rtext {
+        height: 72px;
+    }
+
+    #reviews #rrating {
+        font-family: OpenSans;
+        font-weight: bold;
+        background-color: #222;
+        color: #fff;
+        margin-left: 4px;
+        width: 204px;
+        border: 1px solid #fff;
+    }
+
+    #reviews #rrating::placeholder {
+        background-color: transparent;
+        color: #fff;
+    }
+
+    #reviews #reviewheading {
+        color:#fff;
+        background-color: transparent;
+        font-family: OpenSans;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #reviews span {
+        color: #ddd;
+    }
+
+}
+
+
+
+
+
