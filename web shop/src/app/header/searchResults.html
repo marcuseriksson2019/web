@@ -1,0 +1,59 @@
+<div id="main">
+        <logo></logo>
+        <div id="searchTitle">Search results:</div>
+        <h3 class="bg-primary p-a-1"></h3>
+            <search></search>
+            <userStatus></userStatus>
+        <div id="wrapper">
+
+                <div id="carddiv" *ngFor="let product of getResults(); let i = index" [routerLink]="['/shop/products/', product.id]">
+                    
+                    <div align ="center" id = "imagediv">
+                        <img class="product-image" [src]="product.imageUrl">
+                    </div>
+                    <div id="textdiv">
+                        {{product.article}}
+                            <div id="brand">{{product.brand}}</div>
+                            <div id="description">{{product.descr}}</div>
+                            <div id="department">
+                                <span id="division">
+                                    <a href="#">{{ division }}</a>
+                                    <span>{{product.gender + ' < ' +  product.department + ' < ' +  product.subdepartment}}</span>
+                                </span>
+                            </div>
+                        
+                    </div>
+                    <div id="pricediv">
+                        {{product.price + '£'}}
+                    </div>
+        
+                </div> 
+    
+        </div>
+    
+        <div id="bottom">
+                    
+            <div id="optionMenu">
+                <span id="optionTitle">Products per page: </span>
+                <select id="options" class="form-control" [value]="p" (change)="onSelect($event.target.value)">
+                <option class="spantext" *ngFor="let p of pages; let i = index">{{p}}</option>
+                </select>
+            </div>
+
+            <button id="backToShop" routerLink="/shop">Return to shop</button>
+            
+            <div id="pagesdiv">
+                <button id="pages" *ngFor="let page of buttons" (click)="showPage(page)" [class.active]="pageNumber==page">{{ page }}</button>
+            </div>
+    
+        </div>
+    
+        <div id="footer">
+        </div>
+        
+    </div>    
+    
+    
+           
+        
+        
