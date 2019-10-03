@@ -1,0 +1,16 @@
+#userStatus {
+    position: absolute;
+    top: 8px;
+    left: 1160px;
+	margin-bottom: 12px;
+	font-family: OpenSans; /*Segoe Print*/
+	font-weight: bold;
+	font-size: 12px;
+	background-color: transparent;
+	color: #fff;
+	text-decoration: none;
+}
+
+span {
+    color: #ccc;
+}
