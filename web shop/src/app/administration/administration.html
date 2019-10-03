@@ -1,0 +1,80 @@
+<div id="main">
+    <div id="heading" align ="center">Web shop</div>
+        <h3>ADMINISTRATION</h3>
+        <table align="center">
+            <tr id="tableHeader">
+            <td id="id">ID</td>
+            <td id="a1">Article#</td>
+            <td id="a2">Article</td>
+            <td id="d1">Description</td>
+            <td id="d2">Department</td>
+            <td id="pr">Price</td>
+            <td id="pr">Action</td>
+            </tr>
+            <tr *ngFor="let product of getProducts(); let i = index; let odd = odd; trackBy:getKey"
+            [class.bg-primary]="odd" [class.bg-info]="!odd">
+                <td>{{ product.id }}</td>
+                <td>{{ product.articleNr }}</td>
+                <td>{{ product.article }}</td>
+                <td>{{ product.descr }}</td>
+                <td id="d2">{{ product.gender + " / " + product.department + " / " + product.subdepartment}}</td>
+                <td id="pr">{{ product.price }}</td>
+                <td id="edit"><button (click)="editProduct(i)" id="editButton">Edit</button>
+                <button (click)="deleteProduct(i)" id="deleteButton">Delete</button></td>
+            </tr>
+        </table>
+
+    <button id="orders" routerLink="/orders">Orders</button>
+    <button id="backToShop" routerLink="/shop" (click)="login.logout()">Log out</button>
+    <h4>Edit product</h4>
+    
+    <form novalidate #form="ngForm" (ngSubmit)="update(form.value)">
+        <div class="form-group">
+            <label>Article#</label><br/>
+            <input placeholder="Enter article number" name="articleNr" class="form-control" id="articleNrInput" type="text" [(ngModel)]="product.articleNr" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Article</label><br/>
+            <input placeholder="Enter article name" name="article" class="form-control" id="articleInput" type="text" [(ngModel)]="product.article" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Brand</label><br/>
+            <input placeholder="Enter brand" name="brand" class="form-control" id="brandInput" type="text" [(ngModel)]="product.brand" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Description</label><br/>
+            <input placeholder="Enter description" name="descr" class="form-control" id="descriptionInput" type="text" [(ngModel)]="product.descr" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Gender</label><br/>
+            <input placeholder="Enter gender" name="gender" class="form-control" id="genderInput" type="text" [(ngModel)]="product.gender" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Department</label><br/>
+            <input placeholder="Enter department" name="department" class="form-control" id="departmentInput" type="text" [(ngModel)]="product.department" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Subdepartment</label><br/>
+            <input placeholder="Enter subdepartment" name="subdepartment" class="form-control" id="subdepartmentInput" type="text" [(ngModel)]="product.subdepartment" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Price</label><br/>
+            <input placeholder="Enter price" name="price" class="form-control" id="priceInput" type="text" [(ngModel)]="product.price" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Image URL</label><br/>
+            <input placeholder="Enter image URL" name="imageUrl" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="product.imageUrl" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Image 2 URL</label><br/>
+            <input placeholder="Enter image URL 2" name="imageUrl2" class="form-control" id="imageUrl2Input" type="text" [(ngModel)]="product.imageUrl2" required/><br/>
+        </div>
+            <!--<input placeholder="Upload image" name="image" class="form-control" id="imageUpload" type="file" [value]="product.image" required/><br/>-->
+    </form>
+    
+    <button type="submit" id="updateButton" routerLink="/admin" (click)="updateProduct(form)">Update</button>
+    <button id="newButton" routerLink="/new">New</button>
+
+ 
+
+</div>
