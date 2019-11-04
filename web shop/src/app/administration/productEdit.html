@@ -1,0 +1,63 @@
+<div id="main">
+    <div id="heading" align ="center">{{ getName() }}</div>
+        <h3>ADMINISTRATION</h3>
+    <h5>Enter Product details:</h5>
+
+    <button id="backToShop" routerLink="/admin/products">Products</button>
+    
+    <form novalidate #form="ngForm" (ngSubmit)="updateProduct(form.value, id)">
+        <div class="form-group">
+            <label>Article#</label><br/>
+            <input placeholder="Enter article number" name="articleNr" class="form-control" id="articleNrInput" type="text" [(ngModel)]="getProduct(id).articleNr" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Article</label><br/>
+            <input placeholder="Enter article name" name="article" class="form-control" id="articleInput" type="text" [(ngModel)]="getProduct(id).article" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Brand</label><br/>
+            <input placeholder="Enter brand" name="brand" class="form-control" id="brandInput" type="text" [(ngModel)]="getProduct(id).brand" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Size</label><br/>
+            <input placeholder="Enter size" name="size" class="form-control" id="sizeInput" type="text" [(ngModel)]="getProduct(id).size" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Color</label><br/>
+            <input placeholder="Enter color" name="color" class="form-control" id="colorInput" type="text" [(ngModel)]="getProduct(id).color" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Description</label><br/>
+            <input placeholder="Enter description" name="descr" class="form-control" id="descriptionInput" type="text" [(ngModel)]="getProduct(id).descr" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Gender</label><br/>
+            <input placeholder="Enter gender" name="gender" class="form-control" id="genderInput" type="text" [(ngModel)]="getProduct(id).gender" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Department</label><br/>
+            <input placeholder="Enter department" name="department" class="form-control" id="departmentInput" type="text" [(ngModel)]="getProduct(id).department" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Subdepartment</label><br/>
+            <input placeholder="Enter subdepartment" name="subdepartment" class="form-control" id="subdepartmentInput" type="text" [(ngModel)]="getProduct(id).subdepartment" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Price</label><br/>
+            <input placeholder="Enter price" name="price" class="form-control" id="priceInput" type="text" [(ngModel)]="getProduct(id).price" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Image URL</label><br/>
+            <input placeholder="Enter image URL" name="imageUrl" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="getProduct(id).imageUrl" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Image 2 URL</label><br/>
+            <input placeholder="Enter image URL 2" name="imageUrl2" class="form-control" id="imageUrl2Input" type="text" [(ngModel)]="getProduct(id).imageUrl2" required/><br/>
+        </div>
+            <!--<input placeholder="Upload image" name="image" class="form-control" id="imageUpload" type="file" [value]="shop.u" required/><br/>-->
+</form>
+    <button type="submit" id="addButton" (click)="updateProduct(form.value, id)">Update article</button>
+    <div id="bottom">
+
+    </div>
+</div>

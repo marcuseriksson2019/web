@@ -1,0 +1,57 @@
+﻿<div id="main">
+        <logo></logo>
+        <cartPreview></cartPreview>
+        <navigationBar></navigationBar>
+        <h3>CART</h3>
+        <div id="wrapper">
+        <table align="center">
+            <tr id="tableHeader">
+                <td id="a1">Article#</td>
+                <td id="a2">Article</td>
+                <td id="a3">Size</td>
+                <td id="a4">Color</td>
+                <td id="q">Quantity</td>
+                <td id="pr">Price</td>
+            </tr>
+
+            <tr *ngIf="order.articles.length == 0">
+                <td></td>
+                <td>
+                   No products in cart yet.
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr *ngFor="let product of getCart(); let i = index">
+                <td>{{ product.articleNr }}</td>
+                <td>{{ product.article }}</td>
+	            <td>{{ product.size }}</td>
+                <td>{{ product.color }}</td>
+                <td><input type="number" name="a" min="0" class="fields" [value]="cartSource.oneArray[i].quantity" (change)="onSelect(order.articles, product, $event.target.value)"></td>
+                <td>{{ cartSource.oneArray[i].price*cartSource.oneArray[i].quantity | currency:"GBP":true:"1.2-2" }}</td>
+            </tr>
+            <tr id="vat">
+                <td id="a1">VAT (30%)</td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+                <td id="a4"></td>
+                <td id="q"></td>
+                <td id="pr">{{ cartSource.totalSum*0.3 | currency:"GBP":true:"1.2-2" }}</td>
+            </tr>
+            <tr id="total">
+                <td id="a1">Total</td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+                <td id="a4"></td>
+                <td id="q"></td>
+                <td id="pr">{{ cartSource.totalSum + " £" }}</td>
+            </tr>
+        </table>
+        </div>
+    <div id="footer">
+        <button id="backToShop" routerLink="/shop">Return to shop</button>
+        <button id="checkout" (click)="checkout()" (keydown.enter)="checkout()">Checkout</button>
+    </div>
+</div>
