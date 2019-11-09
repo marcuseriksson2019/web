@@ -1,0 +1,95 @@
+<div id="main">
+    <div id="heading" align ="center">{{ getName() }}</div>
+    <h3>Edit Order</h3>
+
+    <button id="toOrders" routerLink="/admin/orders">Orders</button>
+    
+    <form novalidate #form="ngForm" (ngSubmit)="updateOrder(form.value, id)">
+        <div class="form-group">
+            <label>Order number</label><br/>
+            <input placeholder="Enter article number" name="articleNr" class="form-control" id="articleNrInput" type="text" [(ngModel)]="id" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Order date</label><br/>
+            <input placeholder="Enter article name" name="article" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).date" required/><br/>
+        </div>
+        <div class="form-group" id="articleForm">
+            <label id="a_article">Articles</label> <label id="a_size">Size</label> <label id="a_color">Color</label> <label id="a_price">Price</label> <label  id="a_quantity">Quantity</label><br/>
+            <div *ngIf="getOrder(id).articles.length==1 || getOrder(id).articles.length==2 || getOrder(id).articles.length==3 || getOrder(id).articles.length==4" id="part1">
+                <input placeholder="Enter article" name="article(0)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[0].article" required/>
+                <input placeholder="Enter size" name="size(0)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[0].size" required/>
+                <input placeholder="Enter color" name="color(0)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[0].color" required/>
+                <input placeholder="Enter price" name="price(0)" class="form-control" id="priceInput" type="text" [(ngModel)]="getOrder(id).articles[0].price" required/>
+                <input placeholder="Enter quantity" name="quantity(0)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[0].quantity" required/><br/>
+            </div>
+            <div *ngIf="getOrder(id).articles.length==2 || getOrder(id).articles.length==3 || getOrder(id).articles.length==4" id="part2">
+                <input placeholder="Enter article" name="article(1)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[1].article" required/>
+                <input placeholder="Enter size" name="size(1)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[1].size" required/>
+                <input placeholder="Enter color" name="color(1)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[1].color" required/>
+                <input placeholder="Enter price" name="price(1)" class="form-control" id="priceInput" type="text" [(ngModel)]="getOrder(id).articles[1].price" required/>
+                <input placeholder="Enter quantity" name="quantity(1)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[1].quantity" required/><br/>
+            </div>
+            <div *ngIf="getOrder(id).articles.length==3 || getOrder(id).articles.length==4" id="part3">
+                <input placeholder="Enter article" name="article(2)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[2].article" required/>
+                <input placeholder="Enter size" name="size(2)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[2].size" required/>
+                <input placeholder="Enter color" name="color(2)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[2].color" required/>
+                <input placeholder="Enter price" name="price(2)" class="form-control" id="priceInput" type="text" [(ngModel)]="getOrder(id).articles[2].price" required/>
+                <input placeholder="Enter quantity" name="quantity(2)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[2].quantity" required/><br/>
+            </div>
+            <div *ngIf="getOrder(id).articles.length==4" id="part4">
+                <input placeholder="Enter article" name="article(3)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[3].article" required/>
+                <input placeholder="Enter size" name="size(3)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[3].size" required/>
+                <input placeholder="Enter color" name="color(3)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[3].color" required/>
+                <input placeholder="Enter price" name="price(3)" class="form-control" id="priceInput" type="text" [(ngModel)]="getOrder(id).articles[3].price" required/>
+                <input placeholder="Enter quantity" name="quantity(3)" class="form-control" id="articleInput" type="text" [(ngModel)]="getOrder(id).articles[3].quantity" required/><br/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>First name</label><br/>
+            <input placeholder="Enter brand" name="firstname" class="form-control" id="brandInput" type="text" [(ngModel)]="getOrder(id).firstname" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Last name</label><br/>
+            <input placeholder="Enter description" name="lastname" class="form-control" id="descriptionInput" type="text" [(ngModel)]="getOrder(id).lastname" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Street</label><br/>
+            <input placeholder="Enter gender" name="street" class="form-control" id="genderInput" type="text" [(ngModel)]="getOrder(id).street" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Zip code</label><br/>
+            <input placeholder="Enter subdepartment" name="zipcode" class="form-control" id="subdepartmentInput" type="text" [(ngModel)]="getOrder(id).zipcode" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>City</label><br/>
+            <input placeholder="Enter department" name="city" class="form-control" id="departmentInput" type="text" [(ngModel)]="getOrder(id).city" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Country</label><br/>
+            <input placeholder="Enter department" name="country" class="form-control" id="departmentInput" type="text" [(ngModel)]="getOrder(id).country" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Phone</label><br/>
+            <input placeholder="Enter department" name="phone" class="form-control" id="departmentInput" type="text" [(ngModel)]="getOrder(id).phone" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Email</label><br/>
+            <input placeholder="Enter department" name="email" class="form-control" id="departmentInput" type="text" [(ngModel)]="getOrder(id).email" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>VAT</label><br/>
+            <input placeholder="Enter VAT" name="VAT" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="getOrder(id).VAT" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Total</label><br/>
+            <input placeholder="Enter total sum" name="total" class="form-control" id="imageUrlInput" type="text" [(ngModel)]="getOrder(id).total" required/><br/>
+        </div>
+        <div class="form-group">
+            <label>Shipped</label><br/>
+            <input placeholder="Enter image URL 2" name="shipped" class="form-control" id="imageUrl2Input" type="checkbox" [(ngModel)]="getOrder(id).shipped" required/><br/>
+        </div>
+    </form>
+    
+    <button type="submit" id="updateButton" routerLink="/admin/orders" (click)="updateOrder(form.value, id)">Update</button>
+
+</div>
